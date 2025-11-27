@@ -30,9 +30,27 @@
             line-height: 1.5;
         }
 
+        /* 見出し行 */
+        .header-row {
+            display: flex;
+            padding: 5px 0 10px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header-date {
+            width: 150px;
+            flex-shrink: 0;
+        }
+
+        .header-title {
+            flex-grow: 1;
+        }
+
         .item {
             display: flex;
-            align-items: center; /* 日付とタイトルの縦を揃える */
+            align-items: center;
             padding: 10px 0;
         }
 
@@ -54,13 +72,12 @@
             text-decoration: underline;
         }
 
-        /* モバイル対応 */
         @media (max-width: 600px) {
-            .item {
+            .item, .header-row {
                 flex-direction: column;
-                align-items: flex-start; /* 左揃え */
+                align-items: flex-start;
             }
-            .left {
+            .header-date, .left {
                 width: auto;
                 margin-bottom: 5px;
             }
@@ -82,6 +99,12 @@
             お使いのブラウザで表示できない場合は，以下から無料でダウンロードしてください：<br>
             <a href="https://get.adobe.com/jp/reader/" target="_blank">Adobe Acrobat Reader ダウンロード</a>
         </p>
+    </div>
+
+    <!-- ⬅ ここが追加した「日付」「お知らせ」の見出し行 -->
+    <div class="header-row">
+        <div class="header-date">日付</div>
+        <div class="header-title">お知らせ</div>
     </div>
 
     <!-- PDFアイテム -->
@@ -116,13 +139,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
