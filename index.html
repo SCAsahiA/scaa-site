@@ -12,12 +12,22 @@
 
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .container {
-            max-width: 700px;   /* ページ全体の幅を制限 */
-            margin: 0 auto;      /* ページ中央に配置 */
+            max-width: 700px;   
+            margin: 0 auto;      
+        }
+
+        /* PDF閲覧案内ボックス */
+        .pdf-note {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
         .item {
@@ -29,7 +39,7 @@
         .left {
             color: #555;
             font-size: 14px;
-            width: 150px;        /* 日付の幅を固定 */
+            width: 150px;       
             flex-shrink: 0;
         }
 
@@ -62,6 +72,19 @@
 <h1>PDF記事一覧</h1>
 
 <div class="container">
+
+    <!-- PDF閲覧案内 -->
+    <div class="pdf-note">
+        <strong>📄 PDFファイルについて</strong>
+        <p>
+            このサイトのリンク先は PDF ファイルです。<br>
+            PDF ファイルを閲覧するには、Adobe Acrobat Reader などの PDF リーダーソフトが必要です。<br>
+            お使いのブラウザで表示できない場合は、以下から無料でダウンロードしてください：<br>
+            <a href="https://get.adobe.com/jp/reader/" target="_blank">Adobe Acrobat Reader ダウンロード</a>
+        </p>
+    </div>
+
+    <!-- PDFアイテム -->
     <div class="item">
         <div class="left">令和７年１１月２７日</div>
         <div class="title">
@@ -88,6 +111,7 @@
             </a>
         </div>
     </div>
+
 </div>
 
 </body>
