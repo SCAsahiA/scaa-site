@@ -15,9 +15,14 @@
             margin-bottom: 30px;
         }
 
+        .container {
+            max-width: 700px;   /* ページ全体の幅を制限 */
+            margin: 0 auto;      /* ページ中央に配置 */
+        }
+
         .item {
             display: flex;
-            align-items: center; /* 垂直方向の中央揃え */
+            align-items: center; /* 日付とタイトルの縦を揃える */
             padding: 10px 0;
         }
 
@@ -25,7 +30,7 @@
             color: #555;
             font-size: 14px;
             width: 150px;        /* 日付の幅を固定 */
-            flex-shrink: 0;      /* 縮まないようにする */
+            flex-shrink: 0;
         }
 
         .title a {
@@ -46,7 +51,7 @@
                 align-items: flex-start; /* 左揃え */
             }
             .left {
-                width: auto; /* モバイルでは日付を幅固定しない */
+                width: auto;
                 margin-bottom: 5px;
             }
         }
@@ -56,30 +61,32 @@
 
 <h1>PDF記事一覧</h1>
 
-<div class="item">
-    <div class="left">令和７年１１月２７日</div>
-    <div class="title">
-        <a href="files/article1.pdf" target="_blank">
-            サンプルPDF記事タイトル
-        </a>
+<div class="container">
+    <div class="item">
+        <div class="left">令和７年１１月２７日</div>
+        <div class="title">
+            <a href="files/article1.pdf" target="_blank">
+                サンプルPDF記事タイトル
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="item">
-    <div class="left">令和７年１２月１４日</div>
-    <div class="title">
-        <a href="files/article2.pdf" target="_blank">
-            短いタイトル
-        </a>
+    <div class="item">
+        <div class="left">令和７年１２月１４日</div>
+        <div class="title">
+            <a href="files/article2.pdf" target="_blank">
+                短いタイトル
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="item">
-    <div class="left">令和７年１０月１０日</div>
-    <div class="title">
-        <a href="files/article3.pdf" target="_blank">
-            長いタイトルのPDF記事で、タイトルが長くても日付とずれない
-        </a>
+    <div class="item">
+        <div class="left">令和７年１０月１０日</div>
+        <div class="title">
+            <a href="files/article3.pdf" target="_blank">
+                長いタイトルのPDF記事で、タイトルが長くても日付とずれない
+            </a>
+        </div>
     </div>
 </div>
 
