@@ -6,7 +6,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 30px;
+            margin: 20px;
+            padding: 0;
         }
 
         h1 {
@@ -15,27 +16,42 @@
         }
 
         .item {
+            display: flex;
+            flex-direction: column; /* モバイルは縦並び */
+            align-items: center;    /* 中央寄せ */
             padding: 15px;
             border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .left {
             color: #555;
             font-size: 14px;
-            width: 120px;
+            margin-bottom: 5px;
         }
 
         .title a {
             font-size: 18px;
             color: #0066cc;
             text-decoration: none;
+            text-align: center;
+            word-break: break-word; /* 長いタイトルも折り返し */
         }
 
         .title a:hover {
             text-decoration: underline;
+        }
+
+        /* 画面幅が600px以上の場合は横並び */
+        @media (min-width: 600px) {
+            .item {
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px; /* 日付とタイトルの間隔 */
+            }
+
+            .left {
+                margin-bottom: 0;
+            }
         }
     </style>
 </head>
