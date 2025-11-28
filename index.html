@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>こちらは旭町内会です</title>
     <style>
         body {
@@ -30,6 +31,30 @@
             line-height: 1.5;
         }
 
+        /* 流れるお知らせバー */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: #fffae6;
+            border: 1px solid #ffd700;
+            padding: 5px 0;
+            margin-bottom: 20px;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%; /* 右端からスタート */
+            animation: marquee 15s linear infinite; /* 無限ループ */
+            font-weight: bold;
+            color: #d2691e;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
         /* 見出し行 */
         .header-row {
             display: flex;
@@ -48,6 +73,7 @@
             flex-grow: 1;
         }
 
+        /* PDFアイテム */
         .item {
             display: flex;
             align-items: center;
@@ -72,6 +98,7 @@
             text-decoration: underline;
         }
 
+        /* モバイル対応 */
         @media (max-width: 600px) {
             .item, .header-row {
                 flex-direction: column;
@@ -80,6 +107,9 @@
             .header-date, .left {
                 width: auto;
                 margin-bottom: 5px;
+            }
+            .marquee-text {
+                font-size: 14px;
             }
         }
     </style>
@@ -101,46 +131,21 @@
         </p>
     </div>
   
-   <!-- 流れるお知らせバー -->
-<div class="marquee-container">
-    <div class="marquee-text">
-        ⚠️ こちらは旭町内会のお知らせです。自治会の活動にご理解とご協力をお願いします。会費は納期限までに納めましょう。
+    <!-- 流れるお知らせバー -->
+    <div class="marquee-container">
+        <div class="marquee-text">
+            ⚠️ こちらは旭町内会のお知らせです。自治会の活動にご理解とご協力をお願いします。会費は納期限までに納めましょう。
+        </div>
     </div>
-</div>
 
-<style>
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-    background: #fffae6;
-    border: 1px solid #ffd700;
-    padding: 5px 0;
-    margin-bottom: 20px;
-}
-
-.marquee-text {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%; /* 右端からスタート */
-    animation: marquee 15s linear infinite;
-    font-weight: bold;
-    color: #d2691e;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-</style>
-       
-    <!-- ⬅ ここが追加した「日付」「お知らせ」の見出し行 -->
+    <!-- 見出し行 -->
     <div class="header-row">
         <div class="header-date">日付</div>
         <div class="header-title">お知らせ</div>
     </div>
 
     <!-- PDFアイテム -->
-<!--<div class="item">
+    <!--<div class="item">
         <div class="left">令和８年１月１日</div>
         <div class="title">
             <a href="files/article5.pdf" target="_blank">
@@ -149,7 +154,7 @@
         </div>
     </div>-->
 
-<!--<div class="item">
+    <!--<div class="item">
         <div class="left">令和７年１２月１４日</div>
         <div class="title">
             <a href="files/article4.pdf" target="_blank">
@@ -158,7 +163,7 @@
         </div>
     </div>-->
     
-<!--<div class="item">
+    <!--<div class="item">
         <div class="left">令和７年１２月１４日</div>
         <div class="title">
             <a href="files/article3.pdf" target="_blank">
@@ -167,7 +172,7 @@
         </div>
     </div>-->
     
-<!--<div class="item">
+    <!--<div class="item">
         <div class="left">令和７年１２月１４日</div>
         <div class="title">
             <a href="files/article2.pdf" target="_blank">
