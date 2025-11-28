@@ -47,6 +47,12 @@ h1 {
     padding-left: 100%;
     font-weight: bold;
     color: #d2691e;
+    animation: marquee 15s linear infinite; /* 無限ループに変更 */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 /* 見出し行 */
@@ -125,9 +131,9 @@ h1 {
         </p>
     </div>
   
-    <!-- 流れるお知らせバー（3回で停止） -->
+    <!-- 流れるお知らせバー（無限ループ） -->
     <div class="marquee-container">
-        <div class="marquee-text" id="marquee">
+        <div class="marquee-text">
             ⚠️ こちらは旭町内会のお知らせです。自治会の活動にご理解とご協力をお願いします。会費は納期限までに納めましょう。
         </div>
     </div>
@@ -149,31 +155,6 @@ h1 {
     </div>
 
 </div>
-
-<script>
-// 流れるお知らせバーを3回流したら止める
-const marquee = document.getElementById('marquee');
-let count = 0;
-const iterations = 3; // 3回で停止
-const duration = 15000; // 15秒で1回流れる
-
-function animateMarquee() {
-    marquee.style.transition = `transform ${duration}ms linear`;
-    marquee.style.transform = 'translateX(-100%)';
-
-    setTimeout(() => {
-        count++;
-        if (count < iterations) {
-            marquee.style.transition = 'none';
-            marquee.style.transform = 'translateX(100%)';
-            setTimeout(animateMarquee, 50);
-        }
-    }, duration);
-}
-
-// 初回スタート
-animateMarquee();
-</script>
 
 </body>
 </html>
