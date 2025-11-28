@@ -100,7 +100,39 @@
             <a href="https://get.adobe.com/jp/reader/" target="_blank">Adobe Acrobat Reader ダウンロード</a>
         </p>
     </div>
+  
+   <!-- 流れるお知らせバー -->
+<div class="marquee-container">
+    <div class="marquee-text">
+        ⚠️ こちらは旭町内会のお知らせです。新役員の選出について、PDFを必ずご確認ください。
+    </div>
+</div>
 
+<style>
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: #fffae6;
+    border: 1px solid #ffd700;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%; /* 右端からスタート */
+    animation: marquee 15s linear infinite;
+    font-weight: bold;
+    color: #d2691e;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+</style>
+    
     <!-- ⬅ ここが追加した「日付」「お知らせ」の見出し行 -->
     <div class="header-row">
         <div class="header-date">日付</div>
@@ -157,6 +189,7 @@
 
 </body>
 </html>
+
 
 
 
