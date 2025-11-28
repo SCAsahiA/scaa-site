@@ -150,30 +150,6 @@ h1 {
 
 </div>
 
-<script>
-// 流れるお知らせバーを3回流したら止める
-const marquee = document.getElementById('marquee');
-let count = 0;
-const iterations = 3; // 3回で停止
-const duration = 15000; // 15秒で1回流れる
-
-function animateMarquee() {
-    marquee.style.transition = `transform ${duration}ms linear`;
-    marquee.style.transform = 'translateX(-100%)';
-
-    setTimeout(() => {
-        count++;
-        if (count < iterations) {
-            marquee.style.transition = 'none';
-            marquee.style.transform = 'translateX(100%)';
-            setTimeout(animateMarquee, 50);
-        }
-    }, duration);
-}
-
-// 初回スタート
-animateMarquee();
-</script>
-
 </body>
 </html>
+
