@@ -1,118 +1,88 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>こちらは旭町内会です</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-}
+    <meta charset="UTF-8">
+    <title>こちらは旭町内会です</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.container {
-    max-width: 700px;   
-    margin: 0 auto;      
-}
+        .container {
+            max-width: 700px;   
+            margin: 0 auto;      
+        }
 
-/* PDF閲覧案内ボックス */
-.pdf-note {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-    font-size: 14px;
-    line-height: 1.5;
-}
+        /* PDF閲覧案内ボックス */
+        .pdf-note {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            font-size: 14px;
+            line-height: 1.5;
+        }
 
-/* 流れるお知らせバー */
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-    background: #fffae6;
-    border: 1px solid #ffd700;
-    padding: 5px 0;
-    margin-bottom: 20px;
-}
+        /* 見出し行 */
+        .header-row {
+            display: flex;
+            padding: 5px 0 10px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+        }
 
-.marquee-text {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-    font-weight: bold;
-    color: #d2691e;
-    animation: marquee 15s linear infinite; /* 無限ループに変更 */
-}
+        .header-date {
+            width: 150px;
+            flex-shrink: 0;
+        }
 
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
+        .header-title {
+            flex-grow: 1;
+        }
 
-/* 見出し行 */
-.header-row {
-    display: flex;
-    padding: 5px 0 10px;
-    font-weight: bold;
-    color: #333;
-    border-bottom: 1px solid #ccc;
-}
+        .item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
 
-.header-date {
-    width: 150px;
-    flex-shrink: 0;
-}
+        .left {
+            color: #555;
+            font-size: 14px;
+            width: 180px;       
+            flex-shrink: 0;
+        }
 
-.header-title {
-    flex-grow: 1;
-}
+        .title a {
+            font-size: 18px;
+            color: #0066cc;
+            text-decoration: none;
+            word-break: break-word;
+        }
 
-/* PDFアイテム */
-.item {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-}
+        .title a:hover {
+            text-decoration: underline;
+        }
 
-.left {
-    color: #555;
-    font-size: 14px;
-    width: 180px;       
-    flex-shrink: 0;
-}
-
-.title a {
-    font-size: 18px;
-    color: #0066cc;
-    text-decoration: none;
-    word-break: break-word;
-}
-
-.title a:hover {
-    text-decoration: underline;
-}
-
-/* モバイル対応 */
-@media (max-width: 600px) {
-    .item, .header-row {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .header-date, .left {
-        width: auto;
-        margin-bottom: 5px;
-    }
-    .marquee-text {
-        font-size: 14px;
-    }
-}
-</style>
+        @media (max-width: 600px) {
+            .item, .header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header-date, .left {
+                width: auto;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -131,20 +101,81 @@ h1 {
         </p>
     </div>
   
-    <!-- 流れるお知らせバー（無限ループ） -->
-    <div class="marquee-container">
-        <div class="marquee-text">
-            ⚠️ こちらは旭町内会のお知らせです。自治会の活動にご理解とご協力をお願いします。会費は納期限までに納めましょう。
-        </div>
+   <!-- 流れるお知らせバー -->
+<div class="marquee-container">
+    <div class="marquee-text">
+        ⚠️ こちらは旭町内会のお知らせです。自治会の活動にご理解とご協力をお願いします。会費は納期限までに納めましょう。
     </div>
+</div>
 
-    <!-- 見出し行 -->
+<style>
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: #fffae6;
+    border: 1px solid #ffd700;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%; /* 右端からスタート */
+    animation: marquee 15s linear infinite;
+    font-weight: bold;
+    color: #d2691e;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+</style>
+       
+    <!-- ⬅ ここが追加した「日付」「お知らせ」の見出し行 -->
     <div class="header-row">
         <div class="header-date">日付</div>
         <div class="header-title">お知らせ</div>
     </div>
 
     <!-- PDFアイテム -->
+<!--<div class="item">
+        <div class="left">令和８年１月１日</div>
+        <div class="title">
+            <a href="files/article5.pdf" target="_blank">
+                新年のご挨拶
+            </a>
+        </div>
+    </div>-->
+
+<!--<div class="item">
+        <div class="left">令和７年１２月１４日</div>
+        <div class="title">
+            <a href="files/article4.pdf" target="_blank">
+                積雪深の観測員について
+            </a>
+        </div>
+    </div>-->
+    
+<!--<div class="item">
+        <div class="left">令和７年１２月１４日</div>
+        <div class="title">
+            <a href="files/article3.pdf" target="_blank">
+                第１回役員会議について
+            </a>
+        </div>
+    </div>-->
+    
+<!--<div class="item">
+        <div class="left">令和７年１２月１４日</div>
+        <div class="title">
+            <a href="files/article2.pdf" target="_blank">
+                開催された総会について
+            </a>
+        </div>
+    </div>-->
+
     <div class="item">
         <div class="left">令和７年１１月２６日</div>
         <div class="title">
