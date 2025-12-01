@@ -112,6 +112,37 @@
                 font-size: 14px;
             }
         }
+　　　　　　/* 固定フッター */
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f2f2f2;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.footer-fixed a {
+    color: #0066cc;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-fixed a:hover {
+    text-decoration: underline;
+}
+
+body {
+    /* フッターと重ならないように下に余白を追加 */
+    padding-bottom: 60px;
+}
+
+
+        
     </style>
 </head>
 <body>
@@ -191,7 +222,11 @@
     </div>
 
 </div>
+<div class="footer-fixed">
+    <a href="terms.html">ご利用にあたって</a>
+</div>
 
 </body>
 </html>
+
 
